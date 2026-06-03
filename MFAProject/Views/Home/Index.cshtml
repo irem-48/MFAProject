@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "MFA Simülasyonu";
+}
+
+<div class="auth-container">
+
+    <div class="progress-box">
+        <div class="step active" id="step1">1. Şifre</div>
+        <div class="step" id="step2">2. Güvenlik Sorusu</div>
+        <div class="step" id="step3">3. MFA</div>
+        <div class="step" id="step4">4. Başarılı</div>
+    </div>
+
+    <div class="auth-card" id="loginBox">
+        <h2>Kimlik Doğrulama Sistemi</h2>
+        <p class="desc">E-Posta adresi ve güçlü parola ile giriş yapınız.</p>
+
+        <input type="text" id="username" placeholder="E-Posta">
+        <input type="password" id="password" placeholder="Parola veya passphrase">
+
+        <button type="button"
+                class="secondary-btn password-toggle-btn"
+                onclick="togglePassword(this)">
+            Parolayı Göster
+        </button>
+
+        <label class="passphrase-option">
+            <input type="checkbox" id="usePassphrase">
+            Passphrase kullanıyorum
+        </label>
+
+        <div id="passwordStrength" class="info-box"></div>
+
+        <button onclick="checkLogin()">Giriş Yap</button>
+    </div>
+
+    <div class="auth-card hidden" id="securityBox">
+        <h2>Güvenlik Sorusu</h2>
+        <p class="desc">Ek doğrulama için güvenlik sorusunu cevaplayınız.</p>
+
+        <label>İlk evcil hayvanınızın adı nedir?</label>
+        <input type="text" id="securityAnswer" placeholder="Cevabınız">
+
+        <button onclick="checkSecurityQuestion()">Devam Et</button>
+    </div>
+
+    <div class="auth-card hidden" id="mfaBox">
+        <h2>Çok Faktörlü Doğrulama</h2>
+        <p class="desc">Kayıtlı e-posta adresinize gönderilen 6 haneli doğrulama kodunu giriniz.</p>
+
+        <div class="timer-box">
+            Kodun geçerlilik süresi: <span id="timer">10</span> saniye
+        </div>
+
+        <input type="text" id="mfaCode" placeholder="MFA kodu">
+
+        <button onclick="checkMFA()">Doğrula</button>
+        <button class="secondary-btn" onclick="resendCode()">Kodu Tekrar Gönder</button>
+    </div>
+
+    <div class="auth-card success hidden" id="successBox">
+        <h2>Güvenli Giriş Başarılı</h2>
+
+        <p class="success-message">
+            Kullanıcı kimliği çok katmanlı doğrulama sürecinden başarıyla geçti.
+        </p>
+
+        <div class="dashboard-box">
+            <h3>Hoş Geldiniz</h3>
+            <ul>
+                <li>✓ Parola / passphrase doğrulandı</li>
+                <li>✓ Güvenlik sorusu doğrulandı</li>
+                <li>✓ E-posta ile gönderilen MFA kodu doğrulandı</li>
+            </ul>
+        </div>
+
+        <button onclick="restartDemo()">Tekrar Dene</button>
+        <button class="secondary-btn" onclick="openStudentPanel()">Öğrenci Paneline Git</button>
+    </div>
+
+    <div class="auth-card hidden" id="studentPanel">
+        <h2>Öğrenci Bilgi Sistemi</h2>
+        <p class="desc">Giriş yapan kullanıcıya ait örnek öğrenci bilgileri.</p>
+
+        <div class="student-profile">
+            <div>
+                <h3>Öğrenci Bilgileri</h3>
+                <p><b>Ad Soyad:</b> İrem Nisa Sözen</p>
+                <p><b>Öğrenci No:</b> 202312345</p>
+                <p><b>T.C. Kimlik No:</b> 12345678901</p>
+                <p><b>Bölüm:</b> Yazılım Mühendisliği</p>
+                <p><b>Sınıf:</b> 3. Sınıf</p>
+                <p><b>Genel Not Ortalaması:</b> 3.24</p>
+            </div>
+
+            <div>
+                <h3>Aktif Dersler</h3>
+                <ul>
+                    <li>Siber Güvenlik</li>
+                    <li>Veritabanı Yönetim Sistemleri</li>
+                    <li>Yapay Zekâ</li>
+                    <li>Yazılım Testi</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="schedule-box">
+            <h3>Ders Programı</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gün</th>
+                        <th>Ders</th>
+                        <th>Saat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pazartesi</td>
+                        <td>Siber Güvenlik</td>
+                        <td>10:00 - 12:00</td>
+                    </tr>
+                    <tr>
+                        <td>Çarşamba</td>
+                        <td>Veritabanı Yönetim Sistemleri</td>
+                        <td>13:00 - 15:00</td>
+                    </tr>
+                    <tr>
+                        <td>Perşembe</td>
+                        <td>Yapay Zekâ</td>
+                        <td>09:00 - 11:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button onclick="restartDemo()">Çıkış Yap</button>
+    </div>
+
+    <p id="message" class="message"></p>
+
+</div>
+
+@section Scripts {
+    <script src="~/js/mfa.js"></script>
+}

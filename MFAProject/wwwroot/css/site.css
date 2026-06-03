@@ -1,0 +1,262 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.auth-container {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.progress-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #334155;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+    .step.active {
+        background-color: #2563eb;
+        color: white;
+        font-weight: bold;
+    }
+
+.auth-card {
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+    .auth-card h2 {
+        margin-bottom: 10px;
+        color: #0f172a;
+    }
+
+.desc {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .auth-card button:hover {
+        background-color: #1d4ed8;
+    }
+
+.hidden {
+    display: none;
+}
+
+.info-box {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.weak {
+    color: #dc2626;
+}
+
+.medium {
+    color: #d97706;
+}
+
+.strong {
+    color: #16a34a;
+}
+
+.hint {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.message {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.success-message {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.success h2 {
+    color: #16a34a;
+}
+
+.timer-box {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.secondary-btn {
+    background-color: #64748b !important;
+    margin-top: 10px !important;
+}
+
+    .secondary-btn:hover {
+        background-color: #475569 !important;
+    }
+
+.dashboard-box {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+    .dashboard-box h3 {
+        color: #0f172a;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-box ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .dashboard-box li {
+        padding: 8px 0;
+        color: #166534;
+        font-weight: bold;
+    }
+
+.passphrase-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 12px;
+    color: #475569;
+    font-size: 14px;
+    justify-content: flex-start;
+}
+
+    .passphrase-option input {
+        width: auto !important;
+        margin: 0 !important;
+    }
+.student-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left;
+    margin: 25px 0;
+}
+
+    .student-profile div,
+    .schedule-box {
+        background-color: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        padding: 20px;
+    }
+
+        .student-profile h3,
+        .schedule-box h3 {
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+    .student-profile p,
+    .student-profile li {
+        color: #334155;
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+.schedule-box {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+    .schedule-box table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .schedule-box th,
+    .schedule-box td {
+        border-bottom: 1px solid #cbd5e1;
+        padding: 12px;
+        color: #334155;
+    }
+
+    .schedule-box th {
+        background-color: #e2e8f0;
+        color: #0f172a;
+    }
+
+@media (max-width: 768px) {
+    .student-profile {
+        grid-template-columns: 1fr;
+    }
+}
